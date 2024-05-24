@@ -5,10 +5,11 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import styles from "./main.module.less";
 import { useLocation, useNavigate } from "react-router-dom";
 import { logger, sStorage } from "@infra";
+import { v4 } from "uuid";
 
 function convertRouteToMenuItem(
   routes: RouteObject[] | undefined
-): MenuProps["items"] {
+): { key: string, label: string, title: string, children?: any }[] | undefined {
   if (!routes) {
     return undefined;
   }
@@ -17,9 +18,9 @@ function convertRouteToMenuItem(
     .map((route) => {
       const { title, path } = route;
       return {
-        key: path,
-        label: title,
-        title,
+        key: path ?? v4(),
+        label: title ?? '-',
+        title: title ?? '-',
         children: convertRouteToMenuItem(route.children),
       };
     });

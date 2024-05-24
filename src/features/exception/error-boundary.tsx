@@ -1,4 +1,4 @@
-import { Component, ErrorInfo, PropsWithChildren } from "react";
+import { Component, PropsWithChildren } from "react";
 // import { message } from "@components";
 // import { AnyError } from "./error/types";
 // import { ErrorHandler } from "./error/handler";
@@ -60,7 +60,8 @@ export class ErrorBoundary extends Component<BoundaryProps, ErrorBoundaryState> 
   /**
    * 只能捕获 react 渲染异常
    */ 
-  componentDidCatch(error: Error, info: ErrorInfo) {
+  componentDidCatch() {
+  // componentDidCatch(error: Error, info: ErrorInfo) {
     // this.handler.handleRenderError(error, info);
     // logger.errorBoundary(this.layer, "TODO 解析错误类型");
     logger.errorBoundary("TODO 解析错误类型");
@@ -79,7 +80,8 @@ export class ErrorBoundary extends Component<BoundaryProps, ErrorBoundaryState> 
   /**
    * 捕获「同步方法 & 异步方法 & 资源加载 异常」
    */
-  private catchError(error: ErrorEvent): void {
+  private catchError(): void {
+  // private catchError(error: ErrorEvent): void {
     // logger.errorBoundary(this.layer, 'catchError');
     logger.errorBoundary('catchError');
     // const parsed = this.handler.handleUncaughtError(error);
@@ -93,7 +95,8 @@ export class ErrorBoundary extends Component<BoundaryProps, ErrorBoundaryState> 
   /**
    * 捕获「promise & async/await 异常」
    */
-  private catchRejectEvent(error: PromiseRejectionEvent): void {
+  private catchRejectEvent(): void {
+  // private catchRejectEvent(error: PromiseRejectionEvent): void {
     // logger.errorBoundary(this.layer, 'catchError');("catchRejectEvent");
     logger.errorBoundary('catchError');("catchRejectEvent");
     // const parsed = this.handler.handleRejectError(error);
