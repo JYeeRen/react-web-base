@@ -1,69 +1,53 @@
-import { Link, Outlet } from "react-router-dom";
-import { RouteErrorBoundary as ErrorBoundary } from "@features/exception";
+import { Outlet } from "react-router-dom";
+import {
+  NoPermission,
+  Notfound,
+  ServerError,
+} from "@features/exception";
 import { RouteObject } from "@types";
+import { MainLayout } from "@features/layout";
+import { testRoutes } from "@features/test/routes";
 
 const RootRoute = () => {
   return (
-    <div>
-      ROOT
+    <MainLayout>
       <Outlet />
-      <Link style={{ margin: 10 }} to={"/a"}>
-        a
-      </Link>
-      <Link style={{ margin: 10 }} to={"/b"}>
-        b
-      </Link>
-      <Link style={{ margin: 10 }} to={"/c"}>
-        c
-      </Link>
-      <Link style={{ margin: 10 }} to={"/d"}>
-        d
-      </Link>
-      <Link style={{ margin: 10 }} to={"/e"}>
-        e
-      </Link>
-    </div>
+    </MainLayout>
   );
 };
 
 export const routeConfig: RouteObject[] = [
+  ...testRoutes,
   {
-    path: "/A",
-    ErrorBoundary,
-    lazy: async () => ({
-      Component: (await import("@features/test/a")).default,
-    }),
+    title: "notfound",
+    path: "notfound",
+    hidden: true,
+    element: <Notfound />,
   },
   {
-    path: "/B",
-    lazy: async () => ({
-      Component: (await import("@features/test/b")).default,
-    }),
+    title: "no-permission",
+    path: "no-permission",
+    hidden: true,
+    element: <NoPermission />,
   },
   {
-    path: "/C",
-    lazy: async () => ({
-      Component: (await import("@features/test/c")).default,
-    }),
-  },
-  {
-    path: "/D",
-    lazy: async () => ({
-      Component: (await import("@features/test/d")).default,
-    }),
-  },
-  {
-    path: "/E",
-    lazy: async () => ({
-      Component: (await import("@features/test/e")).default,
-    }),
+    title: "server-error",
+    path: "server-error",
+    hidden: true,
+    element: <ServerError />,
   },
 ];
 
 export const routes: RouteObject[] = [
   {
+    title: "/",
     path: "/",
     element: <RootRoute />,
     children: routeConfig,
+  },
+  {
+    title: "login",
+    path: "/login",
+    element: <div>LOGIN</div>,
   },
 ];

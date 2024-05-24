@@ -1,9 +1,10 @@
 import { RouteObject as RRRouterObject } from "react-router-dom";
 
-interface CustomRouteAttrs {
+interface CustomRouteObject {
+  title?: string;
   permission?: string[];
+  hidden?: boolean;
+  children?: CustomRouteObject[];
 }
-// Pick<RRRouterObject, 'path' | 'Component' | 'ErrorBoundary'>
-export type RouteObject = RRRouterObject & CustomRouteAttrs & {
-  children?: RouteObject[];
-};
+
+export type RouteObject = RRRouterObject & CustomRouteObject;

@@ -2,12 +2,12 @@ import { Button, Result } from "@components";
 import { memo } from "react";
 import { Link } from "react-router-dom";
 
-function NotfoundComponent() {
+function NoPermissionComponent() {
   return (
     <Result
-      status="404"
-      title="404"
-      subTitle="Sorry, the page you visited does not exist."
+      status="403"
+      title="403"
+      subTitle="Sorry, you are not authorized to access this page."
       extra={
         <Button type="primary">
           <Link to="/">Back Home</Link>
@@ -17,4 +17,4 @@ function NotfoundComponent() {
   );
 }
 
-export const Notfound = memo(NotfoundComponent);
+export const NoPermission = memo(NoPermissionComponent);

@@ -28,7 +28,7 @@
       "@infra": ["./src/infra"],
       "@services": ["./src/services"],
       "@types": ["./src/types"],
-      "@routers": ["./src/routers"],
+      "@routes": ["./src/routes"],
       "@hooks": ["./src/hooks"]
     },
   },

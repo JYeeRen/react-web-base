@@ -1,7 +1,6 @@
 
 ```
 pnpm create vite web-react-vite --template react-swc-ts
-
 pnpm add eslint-plugin-oxlint --D
 
 pnpm add eslint-plugin-import -D
@@ -15,9 +14,22 @@ pnpm add antd
 pnpm add debug
 pnpm add @types/debug -D
 
+
+pnpm add less -D
+
+pnpm add store2
+
+pnpm add uuid
+pnpm add @types/uuid -D
+
+pnpm add lodash
+
+pnpm add mobx mobx-react-lite
 ```
 
 # React + TypeScript + Vite
+
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

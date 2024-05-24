@@ -13,7 +13,7 @@ export default defineConfig({
       "@infra": path.resolve(__dirname, "./src/infra"),
       "@services": path.resolve(__dirname, "./src/services"),
       "@types": path.resolve(__dirname, "./src/types"),
-      "@routers": path.resolve(__dirname, "./src/routers"),
+      "@routes": path.resolve(__dirname, "./src/routes"),
       "@hooks": path.resolve(__dirname, "./src/hooks"),
       "@styles": path.resolve(__dirname, "./src/styles"),
     },
