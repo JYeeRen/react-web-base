@@ -1,10 +1,9 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 dependencies:
+  '@ivliu/react-offscreen':
+    specifier: ^1.0.7
+    version: 1.0.7(react@18.3.1)
   '@visactor/react-vtable':
     specifier: ^1.0.1
     version: 1.0.1
@@ -26,6 +25,9 @@ dependencies:
   react:
     specifier: ^18.2.0
     version: 18.3.1
+  react-data-grid:
+    specifier: 7.0.0-beta.44
+    version: 7.0.0-beta.44(react-dom@18.3.1)(react@18.3.1)
   react-dom:
     specifier: ^18.2.0
     version: 18.3.1(react@18.3.1)
@@ -433,6 +435,15 @@ packages:
   /@humanwhocodes/object-schema@2.0.3:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     dev: true
+
+  /@ivliu/react-offscreen@1.0.7(react@18.3.1):
+    resolution: {integrity: sha512-0V+QiZfAMhcZaRv4/8oMI3cDRtNGJhIbGzErZBDrxsGbzpm5vzSGae2UflLZNqE8w+H8NdRtYQLc7+9/VjAM1Q==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=17'
+    dependencies:
+      react: 18.3.1
+    dev: false
 
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1528,6 +1539,11 @@ packages:
     resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
     dev: false
 
+  /clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
+    dev: false
+
   /color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
     engines: {node: '>=7.0.0'}
@@ -2353,7 +2369,7 @@ packages:
     dev: true
 
   /image-size@0.5.5:
-    resolution: {integrity: sha1-Cd/Uq50g4p6xw+gLiZA3jfnjy5w=}
+    resolution: {integrity: sha512-6TDAlDPZxUFCv+fuOkIoXT/V/f3Qbq8e37p+YOiYrUv3v9cc3/6x78VdfPgFVaB9dZYeLUfKgHRebpkm/oP2VQ==}
     engines: {node: '>=0.10.0'}
     hasBin: true
     requiresBuild: true
@@ -3459,6 +3475,17 @@ packages:
       react-dom: 18.3.1(react@18.3.1)
     dev: false
 
+  /react-data-grid@7.0.0-beta.44(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-VTql8VPBJEf7E+zkrqYW+jaQT1/m47dxigWzPq59QESJ8LhU59kHyzIx06BUpjdZKdK/tzbWaw2yyJpKoNnt5g==}
+    peerDependencies:
+      react: ^18.0
+      react-dom: ^18.0
+    dependencies:
+      clsx: 2.1.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    dev: false
+
   /react-dom@18.3.1(react@18.3.1):
     resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
@@ -4104,3 +4131,7 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false

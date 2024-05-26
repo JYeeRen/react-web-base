@@ -25,6 +25,8 @@ pnpm add @types/uuid -D
 pnpm add lodash
 
 pnpm add mobx mobx-react-lite
+
+pnpm add react-data-grid
 ```
 
 # React + TypeScript + Vite
