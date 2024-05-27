@@ -10,7 +10,7 @@ import DataGrid, {
   SelectColumn,
 } from "react-data-grid";
 import { logger } from "@infra";
-import { Button, Checkbox, CheckboxProps } from "@components";
+import { Button, Checkbox, CheckboxProps, Pagination, PaginationProps } from "@components";
 
 import styles from "./e.module.less";
 import { DraggableRowRenderer } from "./draggableRowRenderer";
@@ -125,13 +125,30 @@ function E() {
     []
   );
 
+  const paginationProps: PaginationProps = {
+    className: styles.pagination,
+    total: rows.length,
+    pageSize: 1000,
+    // total: gridStore.total,
+    // pageSize: gridStore.pageSize,
+    // current: gridStore.page,
+    // showTotal: (total) => t("共{{total}}条", { total }),
+    showTotal: () => "共1000条",
+    showQuickJumper: true,
+    showSizeChanger: true,
+    pageSizeOptions: [500, 1000],
+    defaultPageSize: 1000,
+    size: "default",
+    // onChange: gridStore.onTableChange.bind(gridStore),
+  };
+
   return (
     <div className={styles.container}>
       <div style={{ width: 100, height: 200 }}>1</div>
       <DndProvider backend={HTML5Backend}>
         <DataGrid
           className={styles.fillGrid}
-          style={{ resize: "vertical", minHeight: 200 }}
+          style={{ resize: "vertical", minHeight: 500 }}
           {...columnReorderProps}
           // columns={reorderedColumns}
           // onColumnsReorder={onColumnsReorder}
@@ -147,6 +164,7 @@ function E() {
             minWidth: 100,
           }}
         />
+        <Pagination {...paginationProps} />
       </DndProvider>
     </div>
   );
