@@ -1,0 +1,28 @@
+@import url('@styles/variable');
+
+.container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  // 设置后拖拽调整表格大小将不能超过父元素的高度
+  // !超过高度没有意义 限制最大为可见区域高度
+  // block-size: calc(@content-height - 8px * 2);
+  // height: calc(@content-height - 8px * 2);
+  // 保留足够的边距用来显示表格的拖拽手柄
+  padding: 8px;
+  padding-bottom: 0;
+  contain: inline-size;
+}
+
+.fill-grid {
+  height: 100%;
+  block-size: 100%;
+  resize: vertical;
+  min-height: 200px;
+}
+
+.pagination {
+   display: flex;
+   justify-content: end;
+   margin: 4px 4px 8px;
+}

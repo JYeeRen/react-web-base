@@ -1,3 +1,4 @@
+export { default as DataGrid } from './dataGrid';
 
 // antd begin
 export type { Breakpoint } from "antd";
