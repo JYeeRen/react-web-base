@@ -27,7 +27,14 @@ pnpm add lodash
 pnpm add mobx mobx-react-lite
 
 pnpm add react-data-grid
+
+pnpm add clsx
+
+pnpm add react-dnd react-dnd-html5-backend
+
 ```
+~~`pnpm add @glideapps/glide-data-grid lodash marked react-responsive-carousel react-resize-detector @linaria/react @glideapps/glide-data-grid-cells`~~
+
 
 # React + TypeScript + Vite
 

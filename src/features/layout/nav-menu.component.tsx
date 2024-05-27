@@ -2,7 +2,7 @@ import { Menu, MenuProps } from "@components";
 import { routeConfig } from "@routes";
 import { RouteObject } from "@types";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import styles from "./main.module.less";
+import styles from "./nav-menu.component.module.less";
 import { useLocation, useNavigate } from "react-router-dom";
 import { logger, sStorage } from "@infra";
 import { v4 } from "uuid";

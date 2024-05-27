@@ -1,43 +1,53 @@
-.logo {
-  width: 120px;
-  min-width: 120px;
-  height: 32px;
-  background: rgba(255, 255, 255, .2);
-  border-radius: 6px;
-  margin-inline-end: 24px;
+@import url('@styles/variable');
+
+.main {
+  width: 100%;
+  height: 100vh;
 }
 
-.container {
-  width: 100vw;
-  height: 100vh;
-
-  display: flex;
-  flex-direction: column;
+.sidenav {
+  height: calc(100vh - @header-height);
 }
 
 .header {
   display: flex;
-  flex-direction: row;
-  height: 50px;
-  background-color: #c5c5c5;
+  align-items: center;
+  height: @header-height;
 }
 
-.main {
-  display: flex;
-  flex-direction: row;
-}
-
-.navmenu {
-  width: 100px;
-  height: 100%;
-
-  .nav {
-    height: 100%;
-    // background-color: #d31147;
-    // color: #fff;
-  }
+.contentContianer {
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .content {
+  margin: @content-padding-top 0 0 @content-padding-bottom;
+  // margin: 0;
+  // margin-left: 10px;
+  // margin-top: 10px;
+  // min-height: @content-min-height;
+  // background-color: #fff;
+  // padding: 12px;
+  overflow: scroll;
+  // box-sizing: border-box;
+}
 
+.logoContainer {
+  width: 100%;
+  height: @header-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.logo {
+  height: @header-height;
+  width: 120px;
+  min-width: 120px;
+  height: 32px;
+  background: rgba(0, 0, 0, .2);
+  border-radius: 6px;
+  // margin-inline-end: 24px;
 }
